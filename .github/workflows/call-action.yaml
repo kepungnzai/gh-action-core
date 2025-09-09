@@ -16,6 +16,4 @@ jobs:
           name: Alice
 
       - name: Output Result
-        run: echo "Greeting!!! $GREETING"
-        env:
-          GREETING: ${{ steps.greet.outputs.message }}
+        run: echo "Greeting!!! ${{ steps.greet.outputs.message }}"
