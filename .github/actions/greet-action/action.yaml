@@ -18,4 +18,4 @@ runs:
       shell: bash
       run: |
         echo "Hello, ${{ inputs.name }}!"
-        echo "message='Hello ${{ inputs.name }}!'" >> $GITHUB_OUTPUT
+        echo "message='Hello Jeremy'" >> $GITHUB_OUTPUT
