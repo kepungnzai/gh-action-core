@@ -5,6 +5,7 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -16,4 +17,4 @@ jobs:
           name: Alice
 
       - name: Output Result
-        run: echo "Greeting!!! ${{ steps.greet.outputs.message }}"
+        run: echo "Greeting ${{ steps.greet.outputs.message }}"

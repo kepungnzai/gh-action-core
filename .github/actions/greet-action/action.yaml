@@ -9,12 +9,12 @@ inputs:
 outputs:
   message:
     description: 'The greeting message'
-    value: ${{ steps.greet.outputs.message }}
-    
+    value: ${{ steps.greet-step.outputs.message }}
 runs:
   using: composite
   steps:
-    - name: greet
+    - id: greet-step
+      name: greet
       shell: bash
       run: |
         echo "Hello, ${{ inputs.name }}!"
