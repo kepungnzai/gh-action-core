@@ -9,6 +9,7 @@ inputs:
 outputs:
   message:
     description: 'The greeting message'
+    value: ${{ steps.greet.outputs.message }}
     
 runs:
   using: composite
@@ -17,4 +18,4 @@ runs:
       shell: bash
       run: |
         echo "Hello, ${{ inputs.name }}!"
-        echo "message='Hello, ${{ inputs.name }}!'" >> $GITHUB_OUTPUT
+        echo "message='Hello ${{ inputs.name }}!'" >> $GITHUB_OUTPUT
