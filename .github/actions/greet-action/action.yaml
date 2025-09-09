@@ -9,10 +9,11 @@ inputs:
 outputs:
   message:
     description: 'The greeting message'
+    
 runs:
   using: composite
   steps:
-    - name: Greet
+    - name: greet
       shell: bash
       run: |
         echo "Hello, ${{ inputs.name }}!"
