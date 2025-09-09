@@ -16,4 +16,4 @@ jobs:
           name: Alice
 
       - name: Output Result
-        run: echo "Greeting"
+        run: echo "Greeting was: ${{ steps.greet.outputs.message }}"
