@@ -1,0 +1,19 @@
+# .github/workflows/use-composite.yml
+name: Use Composite Action
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Greeting Action
+        id: greet
+        uses: ./.github/actions/greet-action
+        with:
+          name: Alice
+
+      - name: Output Result
+        run: echo "Greeting was: ${{ steps.greet.outputs.message }}"

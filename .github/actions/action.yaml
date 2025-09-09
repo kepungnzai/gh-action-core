@@ -1,0 +1,19 @@
+# .github/actions/greet-action/action.yml
+name: 'Greet User'
+description: 'Prints a greeting message'
+inputs:
+  name:
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  message:
+    description: 'The greeting message'
+runs:
+  using: composite
+  steps:
+    - name: Greet
+      shell: bash
+      run: |
+        echo "Hello, ${{ inputs.name }}!"
+        echo "message=Hello, ${{ inputs.name }}!" >> $GITHUB_OUTPUT
